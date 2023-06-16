@@ -64,7 +64,7 @@ jn		{ printf("ws_jn("); BEGIN(LBLARG); }
 <NUMARG>{
 -?[0-9]+	{ printf("%s);\n", yytext); BEGIN(EOL); }
 
-'[^\\]'		|
+'[^\\\n']'	|
 '\\[ntab']'	{ printf("%s);\n", yytext); BEGIN(EOL); }
 
 \n		{ printf("); Error missing value\n"); BEGIN(INITIAL); }
